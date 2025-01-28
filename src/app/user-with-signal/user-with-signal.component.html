@@ -1,0 +1,14 @@
+<div>
+    <!-- Using signals, the variable should be call as a function call in template -->
+    <button (click)="onSelectUser()">
+        <img [src]="'assets/users/' + selectedUserSignal().avatar" [alt]="selectedUserSignal().name" />
+        <span>{{ selectedUserSignal().name }}</span>
+    </button>
+
+
+    <button (click)="onSelectUser()">
+        <img [src]="imagePathInput()" [alt]="name()" />
+        <span>{{ name() }}</span>
+    </button>
+
+</div>
