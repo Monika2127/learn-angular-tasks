@@ -1,0 +1,22 @@
+<ms-header />
+
+<main>
+  <ul id="users">
+    <!-- New way to use for loop -->
+    @for (user of usersData; track user.id) {
+      <li>
+        <ms-user 
+          [users]="user" 
+          [selected]="user.id === selectedUser?.id"
+          (select)="onSelectUser($event)"
+        />
+      </li>
+    }
+  </ul>
+
+  @if (selectedUser) {
+    <ms-tasks [name]="selectedUser.name" [userId]="selectedUser.id" />
+  } @else {
+    <p>Select a user to see the name</p>
+  }
+</main>
